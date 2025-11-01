@@ -40,7 +40,7 @@ def run(minio_client, date_str: str):
         src = os.path.join(JSON_PATH, fname)
         import re  # (certifique-se de ter isso no topo)
         base_name = re.sub(r'^(dados_)?(.*)\.json$', r'\2', fname, flags=re.IGNORECASE)
-        dest_key = f"{JSON_PREFIX}/data=/{date_str}/{base_name}_{date_str}_{time_str}.json"
+        dest_key = f"{JSON_PREFIX}/data={date_str}/{base_name}_{date_str}_{time_str}.json"
         with open(src, "rb") as f:
             blob = f.read()
 

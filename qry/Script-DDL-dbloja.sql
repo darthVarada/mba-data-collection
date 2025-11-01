@@ -35,7 +35,7 @@ CREATE TABLE db_loja.produto (
     descricao TEXT,                         -- Descrição detalhada do produto.
     preco NUMERIC(10, 2) NOT NULL,          -- Preço do produto com precisão de 2 casas decimais.
     estoque INT NOT NULL DEFAULT 0,         -- Quantidade em estoque, com valor padrão 0.
-    id_categoria INT,                       -- Chave estrangeira que se conecta à tabela 'categorias_produtos'.
+    id_categoria INTEGER,                       -- Chave estrangeira que se conecta à tabela 'categorias_produtos'.
     data_criacao TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP,     -- Registra o momento exato da criação do produto. Preenchido automaticamente no INSERT.
     data_atualizacao TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP, -- Registra a última modificação do produto. Será atualizado automaticamente pelo Trigger.
    CONSTRAINT fk_categoria                 -- Nome da restrição.
